@@ -82,8 +82,8 @@ export default function Home() {
               src="/back6.jpg"
               className={styles.backgroundImage}
               alt="Background"
-              height={1000}
-              width={1000}
+              height={100}
+              width={100}
             />
             <div
               style={{ display: "flex", alignItems: "center", width: "100%" }}
