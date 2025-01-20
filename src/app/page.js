@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import "./globals.css";
 import Image from "next/image";
-import Mycomponent from "./myComponent";
+
 const experiences = [
   {
     title: "Personaland",
@@ -75,7 +75,6 @@ const scrollToSection = (event, sectionId) => {
 export default function Home() {
   return (
     <>
-      <Mycomponent />
       <div className={styles.fullScreenContainer}>
         <section style={{ width: "100%" }} id="home">
           <div className={styles.homeContainer}>
