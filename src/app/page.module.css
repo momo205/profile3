@@ -1,168 +1,445 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
-}
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
-.main {
+.fullScreenContainer {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
-}
-
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
-  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.homeContainer {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  color: transparent;
+  background-color: transparent;
+}
+.homeSection {
+  margin-top: 180px;
+}
+.experienceContainer,
+.projectContainer,
+.gutter,
+.aboutContainer {
+  color: "black";
+  padding-top: 40px;
+}
+.gutter {
+  margin-left: 230px;
+}
+
+.backgroundImage {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  object-fit: cover;
+  z-index: -1;
+  content: fit-content;
+}
+.title {
+  display: flex;
+  flex-direction: column; /* Changed to stack the elements vertically */
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Center the text for both h1 and h2 */
+  font-style: normal;
+  font: inherit;
+  font-weight: 700;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.title h1 {
+  font-size: 32px; /* Larger font size for the main title */
+  /* Bold weight for the main title to stand out */
+  margin: 0;
+  color: #ffffff; /* Ensuring the text is clearly visible */
+}
+
+.title h2 {
+  font-size: 18px; /* Smaller font size for the subheader */
+  font-weight: lighter; /* Lighter weight to differentiate from the main title */
+  margin: 5px 0; /* Space above and below to separate from h1 and content below */
+  border-bottom: 1px solid #ccc; /* Light line under the text for subtle emphasis */
+  padding-bottom: 5px; /* Padding below to distance the line from the text */
+}
+.navigationBar {
+  position: relative; /* Changed from relative to fixed */
+  /* Distance from the top of the viewport */
+  margin-bottom: 33px;
+  display: flex;
+  justify-content: center; /* Center the links inside the navbar */
+  padding: 10px 20px; /* Padding inside the navbar */
+
+  border-radius: 20px; /* Rounded corners */
+  /* Subtle shadow for aesthetics */
+
+  color: rgb(255, 255, 255); /* Text color */
+  border: 1px solid transparent; /* Light grey border for subtle emphasis */
+  border-color: transparent;
+  align-content: center;
+  left: 32.5%;
+  margin-left: 33px;
+}
+
+.navLink {
+  color: rgb(255, 255, 255); /* Link color */
+  text-decoration: none; /* No underline on links */
+  padding: 8px 12px; /* Adjust padding to suit your design */
+  margin: 0 10px; /* Horizontal spacing between links */
+  font-weight: 500; /* Semi-bold font weight */
+  transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+.navLink:hover {
+  color: lightblue; /* Change to light blue on hover for a visual effect */
+}
+
+.Homebuttons button {
+  padding: 8px 16px;
+  border: 1px solid;
+  color: #ffffff; /* Black text */
+  text-decoration: none;
+  border-radius: 20px; /* Rounded corners */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.Homebuttons button:hover {
+  /* Gradient hover effect */
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* Subtle shadow on hover */
+}
+
+.contact {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  z-index: 1050;
+  border: 1px solid transparent;
+  border-radius: 20px;
+}
+.logo {
+  font-family: "Great Vibes", cursive;
+  color: #fffefe;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 18px;
+}
+
+/* Style for the button inside the .contact div */
+.contactButton {
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  /* Gradient from white to light gray */
+  color: #ffffff; /* Black text */
+  text-decoration: none;
+  border-radius: 20px; /* Rounded corners */
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.image img {
+  width: 120px; /* Set the width as needed */
+  height: 120px; /* Height equal to the width to maintain aspect ratio */
+  border-radius: 50%; /* Makes the image circular */
+  border: 3px solid #fff; /* Optional: adds a white border around the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
+  object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+}
+
+.homeDescription {
+  font-size: 16px; /* Adjusted to a slightly smaller and more professional font size */
+  color: #ffffff; /* Slightly darker than the main text for emphasis but still soft */
+  text-align: center; /* Centered text for a clean layout */
+  justify-content: center; /* Ensures content is centered within the container */
+  width: 90%; /* Scaled width to better fit the container and screen */
+  max-width: 800px; /* Maximum width to maintain readability */
+  margin: 20px auto; /* Centering the block horizontally and adding vertical spacing */
+  padding: 10px; /* Padding to create space around the text */
+  font-family: "Times New Roman", Times, serif; /* Consistent font family with the rest of the container */
+  line-height: 1.6; /* Increased line height for better readability */
+  background-color: transparent; /* Background should be consistent with the container */
   font-weight: 500;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.aboutContainer {
+  background-color: #fff;
+  text-align: center;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+
+  width: auto;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  height: 800px;
+}
+.aboutContainer h3 {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+}
+.aboutBody {
+  position: relative;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 180px;
+.cardsContainer {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 50px;
+  width: 1200px; /* This will distribute space evenly around the items */
+  /* Extra space above the card container */
+}
+
+.card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  width: 30%; /* Each card takes up roughly a third of the container width */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 0 10px; /* Spacing between cards */
+  border-bottom: 1px solid black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.card h5 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.card p {
+  color: #666;
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for transform and shadow */
+}
+
+.icons {
+  width: 100px; /* Set the width as needed */
+  height: 100px; /* Height equal to the width to maintain aspect ratio */
+  border-radius: 50%; /* Makes the image circular */
+  border: 3px solid #fff; /* Optional: adds a white border around the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
+  object-fit: cover;
+}
+
+.toolsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px; /* space between images */
+  margin-left: 150px;
+}
+
+.toolImage {
+  width: 40px; /* Set the width as needed */
+  height: 40px; /* Height equal to the width to maintain aspect ratio */
+  border-radius: 50%; /* Makes the image circular */
+  border: 3px solid #fff; /* Optional: adds a white border around the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
+  object-fit: cover; /* maintain aspect ratio */
+}
+.experienceContainer,
+.projectsContainer {
+  text-align: center;
+  width: 1200px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+  grid-template-rows: repeat(
+    2,
+    auto
+  ); /* Creates two rows, height adjusts to content */
+  gap: 16px; /* Space between cards */
+  padding: 20px; /* Padding around the grid container */
+}
+.gridContainer1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+  grid-template-rows: repeat(2, auto);
+  gap: 16px; /* Space between cards */
+  padding: 20px; /* Padding around the grid container */
+}
+
+.experienceCard,
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 450px;
+
+  background-color: #f9f9f9; /* Light grey background */
+  border: 1px solid #ccc; /* Grey border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+.experienceCard {
+  width: "500px";
+}
+
+.projectCard:hover,
+.experienceCard:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.experienceContent,
+.projectContent {
+  text-align: center;
+}
+
+.experienceContent,
+.projectContent h3 {
+  font-size: 20px; /* Largest text for title */
+
+  margin-bottom: 5px;
+}
+
+.experienceContent,
+.projectContent p {
+  font-size: 16px; /* Medium text for role */
+  margin-bottom: 5px;
+}
+
+.experienceContent,
+.projectContent p:last-of-type {
+  font-size: 14px; /* Smallest text for description */
+  font-style: italic;
+  font-weight: lighter;
+  font-family: "Times New Roman", Times, serif;
+}
+.contacts {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.contactForm {
+  width: 60%; /* Adjust based on preference */
+  max-width: 600px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.contactForm h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.contactForm input[type="text"],
+.contactForm input[type="email"],
+.contactForm textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contactForm button {
+  width: 20%;
+  padding: 10px;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 18px;
+}
+
+.contactForm button:hover {
+  background-color: #b4c3d2;
+}
+
+.homebuttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-right: 200px;
+}
+
+.homebuttons button {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #ffffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.homebuttons button:hover {
+  background-color: #000000;
+  color: white;
+}
+
+.logo3 h3 {
+  font-size: 24px;
+  color: #333;
+}
+
+.logo3 {
+  margin-bottom: 20px;
+  margin-right: 195px;
+  font-style: cursive;
 }
 
 .footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
-}
-
-.footer a {
-  display: flex;
+  width: 60%;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
 }
 
-.footer img {
-  flex-shrink: 0;
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+.footer p {
+  font-size: 14px;
 }
