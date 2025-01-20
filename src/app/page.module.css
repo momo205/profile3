@@ -20,9 +20,11 @@
   color: transparent;
   background-color: transparent;
 }
+
 .homeSection {
   margin-top: 180px;
 }
+
 .experienceContainer,
 .projectContainer,
 .gutter,
@@ -30,6 +32,7 @@
   color: "black";
   padding-top: 40px;
 }
+
 .gutter {
   margin-left: 230px;
 }
@@ -42,17 +45,17 @@
   left: 0;
   width: 100%;
   height: 100vh;
-
   object-fit: cover;
   z-index: -1;
   content: fit-content;
 }
+
 .title {
   display: flex;
-  flex-direction: column; /* Changed to stack the elements vertically */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center; /* Center the text for both h1 and h2 */
+  text-align: center;
   font-style: normal;
   font: inherit;
   font-weight: 700;
@@ -61,57 +64,110 @@
 }
 
 .title h1 {
-  font-size: 32px; /* Larger font size for the main title */
-  /* Bold weight for the main title to stand out */
+  font-size: 32px;
   margin: 0;
-  color: #ffffff; /* Ensuring the text is clearly visible */
+  color: #ffffff;
 }
 
 .title h2 {
-  font-size: 18px; /* Smaller font size for the subheader */
-  font-weight: lighter; /* Lighter weight to differentiate from the main title */
-  margin: 5px 0; /* Space above and below to separate from h1 and content below */
-  border-bottom: 1px solid #ccc; /* Light line under the text for subtle emphasis */
-  padding-bottom: 5px; /* Padding below to distance the line from the text */
+  font-size: 18px;
+  font-weight: lighter;
+  margin: 5px 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
 }
+
 .navigationBar {
-  position: relative; /* Changed from relative to fixed */
-  /* Distance from the top of the viewport */
+  position: relative;
   margin-bottom: 33px;
   display: flex;
-  justify-content: center; /* Center the links inside the navbar */
-  padding: 10px 20px; /* Padding inside the navbar */
-
-  border-radius: 20px; /* Rounded corners */
-  /* Subtle shadow for aesthetics */
-
-  color: rgb(255, 255, 255); /* Text color */
-  border: 1px solid transparent; /* Light grey border for subtle emphasis */
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  border: 1px solid transparent;
   border-color: transparent;
   align-content: center;
   left: 32.5%;
   margin-left: 33px;
 }
+/* page.module.css */
+.headerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid transparent;
 
+  z-index: 1000;
+  transition: visibility 0.3s ease, opacity 0.3s ease,
+    background-color 0.3s ease; /* Smooth transition for background color */
+
+  height: 50px;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%; /* Ensures full width when fixed */
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute; /* Ensure it doesn't take space when hidden */
+}
+
+.nameContainer {
+  font-family: "Montserrat", sans-serif;
+  color: #333; /* Softer color for the text */
+  font-size: 80px; /* Larger font size for better visibility */
+  font-weight: bold; /* Bold font weight for emphasis */
+  margin-left: 200px;
+}
+
+.navigationBar1 {
+  display: flex;
+  margin-right: 200px;
+}
+
+.navLink1 {
+  text-decoration: none;
+  color: #333; /* Match the name container color */
+  padding: 10px 15px; /* Larger padding for easier clickability */
+  font-size: 18px; /* Larger font size for better readability */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.navLink1:hover {
+  color: #0056b3; /* A more appealing color on hover */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Slight background highlight on hover */
+}
 .navLink {
-  color: rgb(255, 255, 255); /* Link color */
-  text-decoration: none; /* No underline on links */
-  padding: 8px 12px; /* Adjust padding to suit your design */
-  margin: 0 10px; /* Horizontal spacing between links */
-  font-weight: 500; /* Semi-bold font weight */
-  transition: color 0.3s ease; /* Smooth transition for color changes */
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 8px 12px;
+  margin: 0 10px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .navLink:hover {
-  color: lightblue; /* Change to light blue on hover for a visual effect */
+  color: lightblue;
 }
 
 .Homebuttons button {
   padding: 8px 16px;
   border: 1px solid;
-  color: #ffffff; /* Black text */
+  color: #ffffff;
   text-decoration: none;
-  border-radius: 20px; /* Rounded corners */
+  border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
@@ -120,8 +176,7 @@
 }
 
 .Homebuttons button:hover {
-  /* Gradient hover effect */
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* Subtle shadow on hover */
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
 }
 
 .contact {
@@ -132,6 +187,7 @@
   border: 1px solid transparent;
   border-radius: 20px;
 }
+
 .logo {
   font-family: "Great Vibes", cursive;
   color: #fffefe;
@@ -139,47 +195,44 @@
   display: flex;
   align-items: center;
   padding: 10px 20px;
-
   font-weight: bold;
   font-size: 25px;
   margin-bottom: 18px;
 }
 
-/* Style for the button inside the .contact div */
 .contactButton {
   padding: 8px 16px;
   border: 1px solid transparent;
   background-color: transparent;
-  /* Gradient from white to light gray */
-  color: #ffffff; /* Black text */
+  color: #ffffff;
   text-decoration: none;
-  border-radius: 20px; /* Rounded corners */
+  border-radius: 20px;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .image img {
-  width: 120px; /* Set the width as needed */
-  height: 120px; /* Height equal to the width to maintain aspect ratio */
-  border-radius: 50%; /* Makes the image circular */
-  border: 3px solid #fff; /* Optional: adds a white border around the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
-  object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
 }
 
 .homeDescription {
-  font-size: 16px; /* Adjusted to a slightly smaller and more professional font size */
-  color: #ffffff; /* Slightly darker than the main text for emphasis but still soft */
-  text-align: center; /* Centered text for a clean layout */
-  justify-content: center; /* Ensures content is centered within the container */
-  width: 90%; /* Scaled width to better fit the container and screen */
-  max-width: 800px; /* Maximum width to maintain readability */
-  margin: 20px auto; /* Centering the block horizontally and adding vertical spacing */
-  padding: 10px; /* Padding to create space around the text */
-  font-family: "Times New Roman", Times, serif; /* Consistent font family with the rest of the container */
-  line-height: 1.6; /* Increased line height for better readability */
-  background-color: transparent; /* Background should be consistent with the container */
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.6;
+  background-color: transparent;
   font-weight: 500;
 }
 
@@ -188,18 +241,19 @@
   text-align: center;
   justify-content: center;
   font-family: "Times New Roman", Times, serif;
-
   width: auto;
   align-items: center;
   flex-direction: column;
   display: flex;
   height: 800px;
 }
+
 .aboutContainer h3 {
   font-size: 18px;
   font-weight: 500;
   font-family: "Times New Roman", Times, serif;
 }
+
 .aboutBody {
   position: relative;
 }
@@ -208,17 +262,16 @@
   display: flex;
   justify-content: space-around;
   padding-bottom: 50px;
-  width: 1200px; /* This will distribute space evenly around the items */
-  /* Extra space above the card container */
+  width: 1200px;
 }
 
 .card {
   background-color: #f9f9f9;
   padding: 20px;
-  width: 30%; /* Each card takes up roughly a third of the container width */
+  width: 30%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  margin: 0 10px; /* Spacing between cards */
+  margin: 0 10px;
   border-bottom: 1px solid black;
   font-family: "Times New Roman", Times, serif;
 }
@@ -237,17 +290,17 @@
 }
 
 .card:hover {
-  transform: scale(1.05); /* Slightly enlarge the card */
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for transform and shadow */
+  transform: scale(1.05);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .icons {
-  width: 100px; /* Set the width as needed */
-  height: 100px; /* Height equal to the width to maintain aspect ratio */
-  border-radius: 50%; /* Makes the image circular */
-  border: 3px solid #fff; /* Optional: adds a white border around the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   object-fit: cover;
 }
 
@@ -255,18 +308,19 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px; /* space between images */
+  gap: 10px;
   margin-left: 150px;
 }
 
 .toolImage {
-  width: 40px; /* Set the width as needed */
-  height: 40px; /* Height equal to the width to maintain aspect ratio */
-  border-radius: 50%; /* Makes the image circular */
-  border: 3px solid #fff; /* Optional: adds a white border around the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
-  object-fit: cover; /* maintain aspect ratio */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
 }
+
 .experienceContainer,
 .projectsContainer {
   text-align: center;
@@ -279,20 +333,18 @@
 
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates three columns */
-  grid-template-rows: repeat(
-    2,
-    auto
-  ); /* Creates two rows, height adjusts to content */
-  gap: 16px; /* Space between cards */
-  padding: 20px; /* Padding around the grid container */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 16px;
+  padding: 20px;
 }
+
 .gridContainer1 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: 16px; /* Space between cards */
-  padding: 20px; /* Padding around the grid container */
+  gap: 16px;
+  padding: 20px;
 }
 
 .experienceCard,
@@ -303,22 +355,23 @@
   justify-content: center;
   height: 250px;
   width: 450px;
-
-  background-color: #f9f9f9; /* Light grey background */
-  border: 1px solid #ccc; /* Grey border */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .experienceCard {
   width: "500px";
 }
 
 .projectCard:hover,
 .experienceCard:hover {
-  transform: scale(1.05); /* Slightly enlarge the card */
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  transform: scale(1.05);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .experienceContent,
 .projectContent {
   text-align: center;
@@ -326,73 +379,30 @@
 
 .experienceContent,
 .projectContent h3 {
-  font-size: 20px; /* Largest text for title */
-
+  font-size: 20px;
   margin-bottom: 5px;
 }
 
 .experienceContent,
 .projectContent p {
-  font-size: 16px; /* Medium text for role */
+  font-size: 16px;
   margin-bottom: 5px;
 }
 
 .experienceContent,
 .projectContent p:last-of-type {
-  font-size: 14px; /* Smallest text for description */
+  font-size: 14px;
   font-style: italic;
   font-weight: lighter;
   font-family: "Times New Roman", Times, serif;
 }
+
 .contacts {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-}
-
-.contactForm {
-  width: 60%; /* Adjust based on preference */
-  max-width: 600px;
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.contactForm h3 {
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 24px;
-  color: #333;
-}
-
-.contactForm input[type="text"],
-.contactForm input[type="email"],
-.contactForm textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.contactForm button {
-  width: 20%;
-  padding: 10px;
-  background-color: transparent;
-  color: rgb(0, 0, 0);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin-left: 18px;
-}
-
-.contactForm button:hover {
-  background-color: #b4c3d2;
 }
 
 .homebuttons {
@@ -425,7 +435,8 @@
 .logo3 {
   margin-bottom: 20px;
   margin-right: 195px;
-  font-style: cursive;
+  font-family: "Great Vibes", cursive;
+  font-weight: 800;
 }
 
 .footer {

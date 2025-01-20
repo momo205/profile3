@@ -2,6 +2,7 @@
 import styles from "./page.module.css";
 import "./globals.css";
 import Image from "next/image";
+import StickyHeader from "./components/sticky";
 
 const experiences = [
   {
@@ -122,14 +123,7 @@ export default function Home() {
                 </a>
               </nav>
             </div>
-            <div className={styles.contact}>
-              <button
-                className={styles.contactButton}
-                style={{ fontSize: "15px" }}
-              >
-                Contact Me
-              </button>
-            </div>
+
             <div className={styles.homeSection}>
               <div className={styles.image}>
                 <img src="/images/profile.jpg" />
@@ -174,7 +168,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="about">
+        <section id="about" className={styles.aboutContainer}>
+          <StickyHeader />
           <div id="about " className={styles.aboutContainer}>
             <div className={styles.aboutBody}>
               <h3
@@ -322,16 +317,38 @@ export default function Home() {
           </div>
         </section>
         <section id="contact">
-          <div id="contact" className={styles.gutter}>
+          <div
+            id="contact"
+            className={styles.gutter}
+            style={{ marginRight: "30px" }}
+          >
             <div className={styles.homebuttons}>
-              <button href="https://www.linkedin.com">LinkedIn</button>
-              <button href="https://github.com">Github</button>
-              <button href="/resume.pdf">Resume</button>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/muhammad-a-67356b205/",
+                    "_blank"
+                  )
+                }
+              >
+                LinkedIn
+              </button>
+              <button
+                onClick={() =>
+                  window.open("https://github.com/momo205", "_blank")
+                }
+              >
+                {" "}
+                Github
+              </button>
+              <button onClick={() => window.open("/resume.pdf", "_blank")}>
+                Resume{" "}
+              </button>
             </div>
             <div className={styles.logo3}>
               <h3>MA</h3>
             </div>
-            <div className={styles.footer}>
+            <div className={styles.footer} style={{ marginRight: "280px" }}>
               <p>muhammadb2345@gmail.com</p>
               <p>Copyright © 2025 Muhammad Ahmed. All rights reserved.</p>
             </div>
