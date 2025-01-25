@@ -1,408 +1,390 @@
+/* If you wrap your entire site in this container */
 .fullScreenContainer {
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  font-family: "Times New Roman", Times, serif;
 }
 
+/* -----------------------------------------
+   2) HOME SECTION
+----------------------------------------- */
+
+/* The main container for the Home section:
+   - Full browser height
+   - Background behind content
+*/
 .homeContainer {
+  position: relative;
   width: 100%;
   height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
-  color: transparent;
-  background-color: transparent;
+  overflow: hidden;
 }
 
-.homeSection {
-  margin-top: 180px;
-}
-
-.experienceContainer,
-.projectContainer,
-.gutter,
-.aboutContainer {
-  color: "black";
-  padding-top: 40px;
-}
-
-.gutter {
-  margin-left: 230px;
-}
-
+/* Absolutely placed background image behind everything */
 .backgroundImage {
-  margin: 0;
-  padding: 0;
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover;
   z-index: -1;
-  content: fit-content;
 }
 
-.title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-style: normal;
-  font: inherit;
-  font-weight: 700;
-  color: white;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.title h1 {
-  font-size: 32px;
-  margin: 0;
-  color: #ffffff;
-}
-
-.title h2 {
-  font-size: 18px;
-  font-weight: lighter;
-  margin: 5px 0;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-}
-
-.navigationBar {
+/* 
+   Container that centers the nav horizontally
+   while the logo is pinned top-left
+*/
+.homeNavContainer {
   position: relative;
-  margin-bottom: 33px;
-  display: flex;
-  justify-content: center;
-  padding: 10px 20px;
-  border-radius: 20px;
-  color: rgb(255, 255, 255);
-  border: 1px solid transparent;
-  border-color: transparent;
-  align-content: center;
-  left: 32.5%;
-  margin-left: 33px;
-}
-/* page.module.css */
-.headerContainer {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-  border: 1px solid transparent;
-
-  z-index: 1000;
-  transition: visibility 0.3s ease, opacity 0.3s ease,
-    background-color 0.3s ease; /* Smooth transition for background color */
-
-  height: 50px;
+  text-align: center;
+  padding: 20px 0;
 }
 
-.fixed {
-  position: fixed;
-  top: 0;
-  width: 100%; /* Ensures full width when fixed */
+/* Logo pinned top-left via absolute positioning */
+.logo {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-family: "Great Vibes", cursive;
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-.hidden {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute; /* Ensure it doesn't take space when hidden */
+/* Navigation bar (centered) */
+.navigationBar {
+  display: inline-block; /* so it respects text-align: center in homeNavContainer */
+  gap: 20px; /* spacing between nav links */
 }
 
-.nameContainer {
-  font-family: "Montserrat", sans-serif;
-  color: #333; /* Softer color for the text */
-  font-size: 80px; /* Larger font size for better visibility */
-  font-weight: bold; /* Bold font weight for emphasis */
-  margin-left: 200px;
-}
-
-.navigationBar1 {
-  display: flex;
-  margin-right: 200px;
-}
-
-.navLink1 {
-  text-decoration: none;
-  color: #333; /* Match the name container color */
-  padding: 10px 15px; /* Larger padding for easier clickability */
-  font-size: 18px; /* Larger font size for better readability */
-  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
-}
-
-.navLink1:hover {
-  color: #0056b3; /* A more appealing color on hover */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Slight background highlight on hover */
-}
+/* Individual nav links */
 .navLink {
-  color: rgb(255, 255, 255);
+  color: #fff;
   text-decoration: none;
-  padding: 8px 12px;
-  margin: 0 10px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  margin: 0 10px;
+  transition: color 0.3s;
 }
 
 .navLink:hover {
   color: lightblue;
 }
 
+/* Main Home content, single-column layout with image above title */
+.homeSection {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: calc(
+    100% - 100px
+  ); /* to avoid overlap with top nav, adjust as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+/* Profile image */
+.image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* Name/title section */
+.title h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.title h2 {
+  font-size: 18px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+/* Description below title */
+.homeDescription {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Buttons below description */
+.Homebuttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
 .Homebuttons button {
   padding: 8px 16px;
-  border: 1px solid;
-  color: #ffffff;
-  text-decoration: none;
+  border: 1px solid transparent;
   border-radius: 20px;
+  color: #ffffff;
+  background-color: transparent;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
-  background-color: transparent;
-  border-color: transparent;
 }
 
 .Homebuttons button:hover {
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
 }
 
-.contact {
-  position: absolute;
-  top: 35px;
-  right: 40px;
-  z-index: 1050;
-  border: 1px solid transparent;
-  border-radius: 20px;
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+  .logo {
+    position: static;
+    margin-bottom: 10px;
+  }
+  /* If you prefer hiding the nav bar entirely on mobile:
+  .navigationBar {
+    display: none;
+  }
+  */
+  .homeSection {
+    height: auto;
+    padding-top: 80px;
+  }
 }
 
-.logo {
-  font-family: "Great Vibes", cursive;
-  color: #fffefe;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
+/* -----------------------------------------
+   3) REUSABLE SECTION STYLING
+      (About, Projects, Experience, Contact)
+----------------------------------------- */
+
+/* 
+   A reusable container that adds generous padding
+   and centers content to avoid cramped look 
+   Usage: <section> <div class="sectionContainer"> ... </div> </section>
+   You can adapt class names if you already have aboutContainer, etc.
+*/
+.sectionContainer {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Large heading for each section */
+.sectionTitle {
+  font-size: 36px;
+  margin-bottom: 40px;
   font-weight: bold;
-  font-size: 25px;
-  margin-bottom: 18px;
 }
 
-.contactButton {
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  background-color: transparent;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 20px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.image img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
-}
-
-.homeDescription {
+/* Common text style for paragraphs or subtext in sections */
+.sectionText {
   font-size: 16px;
-  color: #ffffff;
-  text-align: center;
-  justify-content: center;
-  width: 90%;
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 10px;
-  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 20px;
   line-height: 1.6;
-  background-color: transparent;
-  font-weight: 500;
 }
 
+/* -----------------------------------------
+   4) ABOUT SECTION (Horizontal Cards)
+----------------------------------------- */
+
+/* If you prefer to keep a separate aboutContainer or just rely on sectionContainer. */
 .aboutContainer {
-  background-color: #fff;
-  text-align: center;
-  justify-content: center;
-  font-family: "Times New Roman", Times, serif;
-  width: auto;
-  align-items: center;
-  flex-direction: column;
-  display: flex;
-  height: 800px;
+  /* If you're using the aboutContainer class, you can still call .sectionContainer for padding, 
+     or merge them. For example:
+  */
+  /* 
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center; 
+  */
 }
 
-.aboutContainer h3 {
-  font-size: 18px;
-  font-weight: 500;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.aboutBody {
-  position: relative;
-}
-
+/* Cards for "Goals" or other lists in the About section, displayed horizontally. */
 .cardsContainer {
   display: flex;
-  justify-content: space-around;
-  padding-bottom: 50px;
-  width: 1200px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* wraps if screen is too narrow */
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
 }
 
+/* Individual card styling in About */
 .card {
   background-color: #f9f9f9;
   padding: 20px;
-  width: 30%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px; /* allows them to scale, minimum 300px width approx. */
+  max-width: 300px;
   border-radius: 8px;
-  margin: 0 10px;
   border-bottom: 1px solid black;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.card h5 {
-  color: #333;
-  font-size: 18px;
-  margin-bottom: 10px;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.card p {
-  color: #666;
-  font-size: 16px;
-  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Icon in each card (like solution_icon, etc.) */
 .icons {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   border: 3px solid #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
-.toolsContainer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-left: 150px;
-}
-
-.toolImage {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
-}
-
-.experienceContainer,
+/* -----------------------------------------
+   5) PROJECTS SECTION (3×2 grid)
+----------------------------------------- */
 .projectsContainer {
+  /* If you'd like specific styling or reusing .sectionContainer? */
+  /* e.g., 
+  padding: 100px 20px; 
+  max-width: 1200px; 
+  margin: 0 auto; 
   text-align: center;
-  width: 1200px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  */
 }
 
+/* 3 columns, 2 rows on desktop, centered, not spanning full width */
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 16px;
+  grid-auto-rows: auto;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* center the grid container */
+}
+
+/* Individual project card */
+.projectCard {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
   padding: 20px;
 }
 
+.projectCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Content inside each project card */
+.projectContent h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.projectContent p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Tools container inside project card */
+.toolsContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive breakpoints for Projects grid */
+@media (max-width: 1024px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+@media (max-width: 600px) {
+  .gridContainer {
+    grid-template-columns: 1fr; /* single column on small screens */
+  }
+}
+
+/* -----------------------------------------
+   6) EXPERIENCE SECTION (2×1 grid)
+----------------------------------------- */
+.experienceContainer {
+  /* e.g., same logic, or rely on .sectionContainer 
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  */
+}
+
+/* 2 columns on desktop, 1 column on smaller screens */
 .gridContainer1 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual experience card */
+.experienceCard {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
   padding: 20px;
 }
 
-.experienceCard,
-.projectCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 250px;
-  width: 450px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.experienceCard {
-  width: "500px";
-}
-
-.projectCard:hover,
 .experienceCard:hover {
   transform: scale(1.05);
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.experienceContent,
-.projectContent {
-  text-align: center;
-}
-
-.experienceContent,
-.projectContent h3 {
+/* Content inside each experience card */
+.experienceContent h3 {
+  margin-bottom: 8px;
   font-size: 20px;
-  margin-bottom: 5px;
 }
 
-.experienceContent,
-.projectContent p {
+.experienceContent p {
+  margin-bottom: 10px;
   font-size: 16px;
-  margin-bottom: 5px;
 }
 
-.experienceContent,
-.projectContent p:last-of-type {
-  font-size: 14px;
-  font-style: italic;
-  font-weight: lighter;
-  font-family: "Times New Roman", Times, serif;
+/* Responsive breakpoints for Experience grid */
+@media (max-width: 1024px) {
+  .gridContainer1 {
+    grid-template-columns: 1fr; /* single column on medium screens */
+  }
 }
 
-.contacts {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+/* -----------------------------------------
+   7) CONTACT SECTION
+----------------------------------------- */
+/* If you re-use .sectionContainer here, it will have the same padding, etc. */
+.gutter {
+  margin-right: 30px; /* If you specifically want extra margin, optional */
 }
 
 .homebuttons {
@@ -410,7 +392,6 @@
   justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
-  margin-right: 200px;
 }
 
 .homebuttons button {
@@ -424,19 +405,18 @@
 
 .homebuttons button:hover {
   background-color: #000000;
-  color: white;
-}
-
-.logo3 h3 {
-  font-size: 24px;
-  color: #333;
+  color: #ffffff;
 }
 
 .logo3 {
-  margin-bottom: 20px;
-  margin-right: 195px;
   font-family: "Great Vibes", cursive;
+  color: #333;
+  font-size: 24px;
   font-weight: 800;
+  margin-bottom: 20px;
+  /* Centering if needed:
+  text-align: center;
+  */
 }
 
 .footer {
@@ -444,13 +424,139 @@
   text-align: center;
   padding: 10px;
   border-top: 1px solid #ccc;
-  justify-content: center;
-  align-items: center;
   display: flex;
   flex-direction: column;
-  margin-left: 25px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .footer p {
   font-size: 14px;
+  margin: 5px 0;
+}
+
+/* -----------------------------------------
+   8) STICKY HEADER (OPTIONAL)
+----------------------------------------- */
+.headerContainer {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  transition: visibility 0.3s ease, opacity 0.3s ease,
+    background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.headerLogo {
+  margin-right: 40px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.headerNav {
+  display: flex;
+  gap: 20px;
+}
+
+.headerLink {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.headerLink:hover {
+  color: #0056b3;
+}
+
+.headerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px 40px;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.headerName {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.headerNav {
+  display: flex;
+  gap: 30px;
+}
+
+.headerLink {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.headerLink:hover {
+  color: #cc0000;
+}
+
+/* Hide project & experience descriptions on smaller screens */
+@media (max-width: 600px) {
+  .projectCard .description,
+  .experienceCard .description {
+    display: none;
+  }
+}
+
+/* Enlarge About Me cards & stack them for smaller screens */
+@media (max-width: 600px) {
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cardsContainer .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    font-size: 18px;
+    padding: 30px;
+  }
+}
+@media (max-width: 600px) {
+  /* Hide the main navigation bar on small screens */
+  .navigationBar {
+    display: none !important;
+  }
+
+  /* If you're using a sticky header component, hide it as well */
+  .headerContainer {
+    display: none !important;
+  }
 }

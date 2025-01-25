@@ -77,127 +77,114 @@ export default function Home() {
   return (
     <>
       <div className={styles.fullScreenContainer}>
-        <section style={{ width: "100%" }} id="home">
-          <div className={styles.homeContainer}>
-            <Image
-              src="/back6.jpg"
-              className={styles.backgroundImage}
-              alt="Background"
-              height={1500}
-              width={1500}
-            />
-            <div
-              style={{ display: "flex", alignItems: "center", width: "100%" }}
-            >
-              <div className={styles.logo}>
-                <h3>MA</h3>
-              </div>
-              <nav className={styles.navigationBar}>
-                <a
-                  href="#home"
-                  onClick={(e) => scrollToSection(e, "home")}
-                  className={styles.navLink}
-                >
-                  Home
-                </a>
-                <a
-                  href="#about"
-                  onClick={(e) => scrollToSection(e, "about")}
-                  className={styles.navLink}
-                >
-                  About Me
-                </a>
-                <a
-                  href="#experience"
-                  onClick={(e) => scrollToSection(e, "experience")}
-                  className={styles.navLink}
-                >
-                  Experience
-                </a>
-                <a
-                  href="#projects"
-                  onClick={(e) => scrollToSection(e, "projects")}
-                  className={styles.navLink}
-                >
-                  Projects
-                </a>
-              </nav>
+        {/* ----------------- HOME SECTION ----------------- */}
+        <section id="home" className={styles.homeContainer}>
+          {/* Background image behind content */}
+          <Image
+            src="/back6.jpg"
+            alt="Background"
+            layout="fill"
+            objectFit="cover"
+            className={styles.backgroundImage}
+          />
+
+          {/* Top bar: Logo (left), Nav (center) */}
+          <div className={styles.homeNavContainer}>
+            <div className={styles.logo}>
+              <h3>MA</h3>
             </div>
+            <nav className={styles.navigationBar}>
+              <a
+                href="#home"
+                onClick={(e) => scrollToSection(e, "home")}
+                className={styles.navLink}
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                onClick={(e) => scrollToSection(e, "about")}
+                className={styles.navLink}
+              >
+                About Me
+              </a>
+              <a
+                href="#experience"
+                onClick={(e) => scrollToSection(e, "experience")}
+                className={styles.navLink}
+              >
+                Experience
+              </a>
+              <a
+                href="#projects"
+                onClick={(e) => scrollToSection(e, "projects")}
+                className={styles.navLink}
+              >
+                Projects
+              </a>
+            </nav>
+          </div>
 
-            <div className={styles.homeSection}>
-              <div className={styles.image}>
-                <img src="/images/profile.jpg" />
-              </div>
-              <div className={styles.title}>
-                <h1>Muhammad Ahmed</h1>
-                <h2>Full Stack Software Engineer</h2>
-              </div>
-
-              <div className={styles.homeDescription}>
-                <h4 style={{ fontWeight: "400" }}>
-                  Passionate software engineering student with skills in
-                  front-end and back-end development, driven to create
-                  innovative solutions that make a positive impact. Currently
-                  seeking internships to apply my expertise and further grow as
-                  a developer.
-                </h4>
-              </div>
-              <div className={styles.Homebuttons}>
-                <button
-                  onClick={() =>
-                    window.open(
-                      "https://www.linkedin.com/in/muhammad-a-67356b205/",
-                      "_blank"
-                    )
-                  }
-                >
-                  LinkedIn
-                </button>
-                <button
-                  onClick={() =>
-                    window.open("https://github.com/momo205", "_blank")
-                  }
-                >
-                  {" "}
-                  Github
-                </button>
-                <button onClick={() => window.open("/resume.pdf", "_blank")}>
-                  Resume{" "}
-                </button>
-              </div>
+          {/* Main home content (single column) */}
+          <div className={styles.homeSection}>
+            <div className={styles.image}>
+              <img src="/images/profile.jpg" alt="Profile" />
+            </div>
+            <div className={styles.title}>
+              <h1>Muhammad Ahmed</h1>
+              <h2>Full Stack Software Engineer</h2>
+            </div>
+            <div className={styles.homeDescription}>
+              <p>
+                Passionate software engineering student with skills in front-end
+                and back-end development, driven to create innovative solutions
+                that make a positive impact. Currently seeking internships to
+                apply my expertise and further grow as a developer.
+              </p>
+            </div>
+            <div className={styles.Homebuttons}>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/muhammad-a-67356b205/",
+                    "_blank"
+                  )
+                }
+              >
+                LinkedIn
+              </button>
+              <button
+                onClick={() =>
+                  window.open("https://github.com/momo205", "_blank")
+                }
+              >
+                Github
+              </button>
+              <button onClick={() => window.open("/resume.pdf", "_blank")}>
+                Resume
+              </button>
             </div>
           </div>
         </section>
-        <section id="about" className={styles.aboutContainer}>
+
+        {/* ----------------- ABOUT SECTION ----------------- */}
+        <section id="about">
+          {/* Optional Sticky Header */}
           <StickyHeader />
-          <div id="about " className={styles.aboutContainer}>
-            <div className={styles.aboutBody}>
-              <h3
-                style={{
-                  fontWeight: "bold",
-                  fontSize: "28px",
-                }}
-              >
-                About Me
-              </h3>
-              <h3 style={{}}>City College Of New York'26</h3>
-              <h3 style={{}}>Computer Science</h3>
-            </div>
-            <div style={{ paddingBottom: "60px" }}>
-              {" "}
-              <h3
-                style={{
-                  borderBottom: "1px solid black",
-                  fontFamily: "inherit",
-                  fontSize: "28px",
-                }}
-              >
-                Goals
-              </h3>
-            </div>
+
+          <div className={styles.sectionContainer}>
+            <h2 className={styles.sectionTitle}>About Me</h2>
+            <p className={styles.sectionText}>City College Of New York '26</p>
+            <p className={styles.sectionText}>Computer Science</p>
+
+            <h2 className={styles.sectionTitle}>Goals</h2>
             <div className={styles.cardsContainer}>
               <div className={styles.card}>
-                <img className={styles.icons} src="/images/solution_icon.png" />
+                <img
+                  className={styles.icons}
+                  src="/images/solution_icon.png"
+                  alt="Solutions Icon"
+                />
                 <h5>Finding Solutions</h5>
                 <p>
                   I am passionate about solving complex problems through
@@ -209,6 +196,7 @@ export default function Home() {
                 <img
                   className={styles.icons}
                   src="/images/community_icon.jpeg"
+                  alt="Community Icon"
                 />
                 <h5>Helping Community</h5>
                 <p>
@@ -222,6 +210,7 @@ export default function Home() {
                 <img
                   className={styles.icons}
                   src="/images/challenges_icon.png"
+                  alt="Challenges Icon"
                 />
                 <h5>Making Innovations</h5>
                 <p>
@@ -234,16 +223,11 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="projects" className={styles.projectsContainer}>
-          <div id="projects" className={styles.projectsContainer}>
-            <h3
-              style={{
-                fontWeight: "bold",
-                fontSize: "28px",
-              }}
-            >
-              Projects
-            </h3>
+
+        {/* ----------------- PROJECTS SECTION ----------------- */}
+        <section id="projects">
+          <div className={styles.sectionContainer}>
+            <h2 className={styles.sectionTitle}>Projects</h2>
             <div className={styles.gridContainer}>
               {projects.map((project, index) => (
                 <div key={index} className={styles.projectCard}>
@@ -254,10 +238,9 @@ export default function Home() {
                     <div className={styles.toolsContainer}>
                       {project.tools.map((tool, idx) => (
                         <Image
-                          src={tool.trim()} // Ensure no leading/trailing whitespace
+                          src={tool.trim()}
                           alt="Tool image"
                           key={idx}
-                          className={styles.toolImage}
                           width={40}
                           height={40}
                         />
@@ -269,46 +252,17 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="experience" className={styles.experienceContainer}>
-          <div id=" experience" className={styles.experienceContainer}>
-            <h3
-              style={{
-                fontWeight: "bold",
-                fontSize: "28px",
-              }}
-            >
-              Experience
-            </h3>
-            <div
-              className={styles.gridContainer1}
-              style={{ marginLeft: "120px" }}
-            >
+
+        {/* ----------------- EXPERIENCE SECTION ----------------- */}
+        <section id="experience">
+          <div className={styles.sectionContainer}>
+            <h2 className={styles.sectionTitle}>Experience</h2>
+            <div className={styles.gridContainer1}>
               {experiences.map((exp, index) => (
-                <div
-                  key={index}
-                  className={styles.experienceCard}
-                  style={{ backgroundImage: `url(${exp.image})` }}
-                >
+                <div key={index} className={styles.experienceCard}>
                   <div className={styles.experienceContent}>
-                    <h3
-                      style={{
-                        fontFamily: "Times New Roman , Times, serif",
-                        fontStyle: "normal",
-                        fontSize: "21px",
-                      }}
-                    >
-                      {exp.title}
-                    </h3>
-                    <p
-                      style={{
-                        fontWeight: "normal",
-                        fontFamily: "Times New Roman , Times, serif",
-                        fontStyle: "normal",
-                        fontSize: "16px",
-                      }}
-                    >
-                      {exp.summary}
-                    </p>
+                    <h3>{exp.title}</h3>
+                    <p>{exp.summary}</p>
                     <p>{exp.description}</p>
                   </div>
                 </div>
@@ -316,12 +270,11 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* ----------------- CONTACT SECTION ----------------- */}
         <section id="contact">
-          <div
-            id="contact"
-            className={styles.gutter}
-            style={{ marginRight: "30px" }}
-          >
+          <div className={styles.sectionContainer}>
+            {/* You can rename .homebuttons if you want a unique class for contact buttons */}
             <div className={styles.homebuttons}>
               <button
                 onClick={() =>
@@ -338,17 +291,16 @@ export default function Home() {
                   window.open("https://github.com/momo205", "_blank")
                 }
               >
-                {" "}
                 Github
               </button>
               <button onClick={() => window.open("/resume.pdf", "_blank")}>
-                Resume{" "}
+                Resume
               </button>
             </div>
             <div className={styles.logo3}>
               <h3>MA</h3>
             </div>
-            <div className={styles.footer} style={{ marginRight: "280px" }}>
+            <div className={styles.footer}>
               <p>muhammadb2345@gmail.com</p>
               <p>Copyright © 2025 Muhammad Ahmed. All rights reserved.</p>
             </div>

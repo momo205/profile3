@@ -2,4 +2,14 @@ body,
 html {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif; /* Default font */
+}
+section {
+  width: 100%; /* Full width for all sections */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
