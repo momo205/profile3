@@ -6,14 +6,6 @@
   justify-content: center;
 }
 
-/* -----------------------------------------
-   2) HOME SECTION
------------------------------------------ */
-
-/* The main container for the Home section:
-   - Full browser height
-   - Background behind content
-*/
 .homeContainer {
   position: relative;
   width: 100%;
@@ -152,28 +144,13 @@
     position: static;
     margin-bottom: 10px;
   }
-  /* If you prefer hiding the nav bar entirely on mobile:
-  .navigationBar {
-    display: none;
-  }
-  */
+
   .homeSection {
     height: auto;
     padding-top: 80px;
   }
 }
 
-/* -----------------------------------------
-   3) REUSABLE SECTION STYLING
-      (About, Projects, Experience, Contact)
------------------------------------------ */
-
-/* 
-   A reusable container that adds generous padding
-   and centers content to avoid cramped look 
-   Usage: <section> <div class="sectionContainer"> ... </div> </section>
-   You can adapt class names if you already have aboutContainer, etc.
-*/
 .sectionContainer {
   padding: 100px 20px;
   max-width: 1200px;
@@ -198,19 +175,6 @@
 /* -----------------------------------------
    4) ABOUT SECTION (Horizontal Cards)
 ----------------------------------------- */
-
-/* If you prefer to keep a separate aboutContainer or just rely on sectionContainer. */
-.aboutContainer {
-  /* If you're using the aboutContainer class, you can still call .sectionContainer for padding, 
-     or merge them. For example:
-  */
-  /* 
-  padding: 100px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center; 
-  */
-}
 
 /* Cards for "Goals" or other lists in the About section, displayed horizontally. */
 .cardsContainer {
@@ -251,19 +215,6 @@
   border: 3px solid #fff;
   object-fit: cover;
   margin-bottom: 10px;
-}
-
-/* -----------------------------------------
-   5) PROJECTS SECTION (3×2 grid)
------------------------------------------ */
-.projectsContainer {
-  /* If you'd like specific styling or reusing .sectionContainer? */
-  /* e.g., 
-  padding: 100px 20px; 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  text-align: center;
-  */
 }
 
 /* 3 columns, 2 rows on desktop, centered, not spanning full width */
@@ -321,18 +272,6 @@
   .gridContainer {
     grid-template-columns: 1fr; /* single column on small screens */
   }
-}
-
-/* -----------------------------------------
-   6) EXPERIENCE SECTION (2×1 grid)
------------------------------------------ */
-.experienceContainer {
-  /* e.g., same logic, or rely on .sectionContainer 
-  padding: 100px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  */
 }
 
 /* 2 columns on desktop, 1 column on smaller screens */
