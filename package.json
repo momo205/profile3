@@ -17,11 +17,14 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
     "@types/node": "^25.0.3",
     "@types/react": "^19.2.7",
     "autoprefixer": "^10.4.23",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^15.1.5",
     "framer-motion": "^12.24.12",
     "lucide-react": "^0.562.0",
     "postcss": "^8.5.6",

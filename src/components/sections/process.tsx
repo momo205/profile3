@@ -95,7 +95,7 @@ export default function Process() {
           className="mt-12 text-center"
         >
           <p className="text-secondary-white max-w-2xl mx-auto">
-            Communication is key. You'll receive regular updates, and I'm
+            Communication is key. You&apos;ll receive regular updates, and I&apos;m
             available for questions throughout the project. Typical response
             time: within 24 hours.
           </p>

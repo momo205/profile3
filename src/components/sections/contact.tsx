@@ -18,10 +18,10 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-primary-white">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-xl text-secondary-white max-w-2xl mx-auto">
-            Ready to build something great? Get in touch and let's discuss your
+            Ready to build something great? Get in touch and let&apos;s discuss your
             project.
           </p>
         </motion.div>
@@ -98,7 +98,7 @@ export default function Contact() {
             <CardHeader>
               <CardTitle className="text-primary-white">Quick Project Form</CardTitle>
               <CardDescription className="text-secondary-white">
-                Fill out this form and I'll get back to you within 24 hours
+                Fill out this form and I&apos;ll get back to you within 24 hours
               </CardDescription>
             </CardHeader>
             <CardContent>
